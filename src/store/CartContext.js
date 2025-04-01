@@ -7,11 +7,9 @@ const cartReducer = (state, action) => {
         );
 
         let updatedItems;
-
-        // Konverteeri `price` numberiks enne lisamist
         const itemWithNumericPrice = {
             ...action.item,
-            price: parseFloat(action.item.price), // Veendu, et price on number
+            price: parseFloat(action.item.price)
         };
 
         if (existingItemIndex !== -1) {
