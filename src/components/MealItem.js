@@ -10,7 +10,6 @@ const MealItem = ({ meal }) => {
             id: meal.id,
             name: meal.name,
             price: meal.price,
-            quantity: 1, 
         });
     };
 
@@ -22,7 +21,8 @@ const MealItem = ({ meal }) => {
     return (
         <li className="meal-item">
             <article>
-                <img src={meal.image} alt={meal.name} />
+            <img src={`/${meal.image}`} alt={meal.name} />
+
 
                 <div>
                     <h3>{meal.name}</h3>
