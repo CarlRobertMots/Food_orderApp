@@ -1,4 +1,4 @@
-import { useReducer, useRef } from "react";
+import { useReducer, useRef, useEffect } from "react";
 
 import Header from "./components/Header";
 import Meals from "./components/Meals";
@@ -53,6 +53,7 @@ const App = () => {
 		dispatchCartAction({ type: "ADD_ITEM", item });
 		console.log("Added item to cart:", item);
 		console.log(cartState.items);
+    console.log("Cart after adding:", cartState.items);
 	};
 	const removeItemFromCartHandler = (id, amount = 1) => {
 		dispatchCartAction({ type: "REMOVE_ITEM", id, amount });

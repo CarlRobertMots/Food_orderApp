@@ -6,7 +6,7 @@ import CartContext from '../store/CartContext'
 
 const Header = ({ onModalOpen}) => {
     const cartctx = useContext(CartContext);
-    const totalItems = cartctx.items.reduce((sum, item) => sum + item.quantity, 0);
+    const totalItems = cartctx.items.reduce((total, item) => total + item.quantity, 0);
     console.log(cartctx.items)
     return (
         <div>
@@ -26,7 +26,6 @@ const Header = ({ onModalOpen}) => {
             </nav>
         </header>
         <ul id="meals">
-            <h2>Create list of meals, using fetch data from backend</h2>
         </ul>
         </div>
     )
