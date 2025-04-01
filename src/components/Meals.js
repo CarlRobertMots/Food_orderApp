@@ -1,4 +1,6 @@
-import { useEffect, useState } from "react";
+import{ useEffect, useState } from "react";
+import MealItem from "./MealItem";
+import React from "react";
 
 const Meals = () => {
     const [meals, setMeals] = useState([]);
@@ -36,11 +38,7 @@ const Meals = () => {
     return (
         <ul id="meals">
             {meals.map((meal) => (
-                <li key={meal.id}>
-                    <h3>{meal.name}</h3>
-                    <p>{meal.description}</p>
-                    <p>€{meal.price.toFixed(2)}</p>
-                </li>
+                <MealItem key={meal.id} meal={meal}   />
             ))}
         </ul>
     );

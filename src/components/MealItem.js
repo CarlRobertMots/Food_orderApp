@@ -1,20 +1,22 @@
-const MealItem = (props) => {
+const MealItem = ({ meal }) => {
     return (
-        <li>
+        <li className="meal-item">
             <article>
-                <img src={require(`../assets/${props.meal.image}`)} alt={props.meal.name}/>
+                {/* Pildi kuvamine otse JSON-failist saadud teega */}
+                <img src={meal.image} alt={meal.name} />
+
                 <div>
-                    <h3>{props.meal.name}</h3>
-                    <p>props.meal.price</p>
-                    <p>{props.meal.description}</p>
+                    <h3>{meal.name}</h3>
+                    <p className="meal-price">€{parseFloat(meal.price).toFixed(2)}</p>
+                    <p className="meal-description">{meal.description}</p>
                 </div>
+
                 <p>
-                    <button >Add to Cart</button>
+                    <button className="add-to-cart">Add to Cart</button>
                 </p>
             </article>
         </li>
-        
-    )
-}
+    );
+};
 
-export default MealItem
+export default MealItem;
