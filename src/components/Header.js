@@ -4,7 +4,7 @@ import Button from './UI/Button'
 import { useContext } from 'react' 
 import CartContext from '../store/CartContext'
 
-const Header = () => {
+const Header = ({ onModalOpen}) => {
     const cartctx = useContext(CartContext);
     const totalItems = cartctx.items.reduce((sum, item) => sum + item.quantity, 0);
     console.log(cartctx.items)
@@ -17,7 +17,11 @@ const Header = () => {
                     
                 </div>
             <nav>
-            <Button textOnly={true}>Cart ({cartctx.items.length})</Button>
+            <Button 
+            onClick={onModalOpen}
+            textOnly={true}
+            >Cart ({cartctx.items.length})
+            </Button>
 
             </nav>
         </header>
